@@ -1,4 +1,4 @@
-package tema3;
+package parte1;
 
 import java.util.Scanner;
 
