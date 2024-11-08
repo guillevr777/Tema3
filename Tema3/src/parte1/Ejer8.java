@@ -37,6 +37,7 @@ public class Ejer8 {
 				
 				numero[i] = random.nextInt(1,11);
 				
+				//creo un if para saber si el numero buscado es igual al actual de la tabla
 				if (numero[i] == numeroBuscado) {
 					System.out.print(i + " , ");
 					cantidad++;
