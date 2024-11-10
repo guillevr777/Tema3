@@ -17,10 +17,10 @@ public class Ejer1 {
 	
 	//pregunto al usuario por el valor y el tamaño y se lo asigno a las variables correspondientes
 	
-	System.out.print("Dime el tamaño que quieres que tenga la tabla :");
-	tamaño = reader.nextInt();
-	
 	System.out.print("Dime el valor que quieres que tenga la tabla :");
+	valor = reader.nextInt();
+	
+	System.out.print("Dime el tamaño que quieres que tenga la tabla :");
 	tamaño = reader.nextInt();
 	
 	//creo la tabla 

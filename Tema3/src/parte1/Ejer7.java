@@ -8,7 +8,7 @@ public class Ejer7 {
 		Scanner reader = new Scanner(System.in);
 		
 		int numeroU = 0;
-		
+				
 		int numero [] = new int [12];
 		
 		System.out.println("Dime las temperaturas de todos los meses del año de 1 en 1 :");
@@ -19,16 +19,18 @@ public class Ejer7 {
 			numeroU = reader.nextInt();
 			
 			numero[i] = numeroU;
-			
-			System.out.print("Mes " + i + " haran : ");
-			//Dice todos los numeros en su orden original
-			for (int a = 0 ; a<numero[i] ; a++) {
-				
-				System.out.print("*");
-				
 			}
+		for (int b = 0 ; b < numero.length ;b++) {
+						
+			System.out.print("Mes " + (b+1) + " haran : ");
+			
+				//Dice todos los numeros en su orden original
+				for (int a = 0 ; a < numero[b] ; a++) {
+
+					System.out.print("*");
+				}
 			System.out.println();
-		}
+			}
 		//cerramos el escaner
 		reader.close();
 	}
