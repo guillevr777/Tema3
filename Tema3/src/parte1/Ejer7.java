@@ -20,7 +20,16 @@ public class Ejer7 {
 			
 			numero[i] = numeroU;
 			
+			System.out.print("Mes " + i + " haran : ");
+			//Dice todos los numeros en su orden original
+			for (int a = 0 ; a<numero[i] ; a++) {
+				
+				System.out.print("*");
+				
 			}
-		System.out.println("*");
+			System.out.println();
+		}
+		//cerramos el escaner
+		reader.close();
 	}
 }
