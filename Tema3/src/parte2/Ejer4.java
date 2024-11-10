@@ -9,9 +9,6 @@ public class Ejer4 {
 		//creamos el escaner
 		Scanner reader = new Scanner(System.in);
 		
-		//creamos una variable para almacenar numero de usuario
-		int numeros = 0;
-		
 		//creo las tablas 
 		int tablaUno [] = new int [8];
 		
