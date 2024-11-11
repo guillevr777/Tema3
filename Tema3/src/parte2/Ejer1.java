@@ -1,6 +1,7 @@
 package parte2;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,6 +16,7 @@ public class Ejer1 {
 	int tamaño;
 	int valor = 0;
 	
+	try {
 	//pregunto al usuario por el valor y el tamaño y se lo asigno a las variables correspondientes
 	
 	System.out.print("Dime el valor que quieres que tenga la tabla :");
@@ -30,7 +32,16 @@ public class Ejer1 {
 	
 	//Hago un syso para mostrar la tabla por consola
 	System.out.println(Arrays.toString(numeros));
+	
+	} catch (InputMismatchException e) {
+        System.out.println("Error: Por favor ingrese un número válido.");
+    } catch (Exception e) {
+        System.out.println("Ha ocurrido un error inesperado: " + e.getMessage());
+    } finally {
+    	
 	//cerramos el escaner
 		reader.close();
+		
+    	}
 	}
 }

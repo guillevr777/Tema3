@@ -1,6 +1,7 @@
 package englishexercises;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -23,7 +24,8 @@ public class Exer1 {
 		//created vairables for values and spaces
 		int value = 0;
 		int space = 0;
-
+		
+		try {
 		//we create a do to repeat until c is pressed
 		do {
 		//We ask him to choose a option of those ones
@@ -56,7 +58,15 @@ public class Exer1 {
 		
 		System.out.println(Arrays.toString(numbers));
 		
+		} catch (InputMismatchException e) {
+            System.out.println("Error: Por favor ingrese un número válido.");
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido un error inesperado: " + e.getMessage());
+        } finally {
+        	
 	//we close the scanner
 	reader.close();
+	
+        }
 	}
 }

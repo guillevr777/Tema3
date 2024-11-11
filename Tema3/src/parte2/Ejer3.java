@@ -1,6 +1,7 @@
 package parte2;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,6 +17,7 @@ public class Ejer3 {
 		//creo las tablas 
 		int tablaUno [] = new int [30];
 		
+		try {
 		//asignamos valores a la tabla entre 0 y 9
 		for (int i = 0; i < tablaUno.length ; i++) {
 			
@@ -29,7 +31,15 @@ public class Ejer3 {
 		//decimos por pantalla la tabla ordenada
 		System.out.println(Arrays.toString(tablaUno));
 		
-		//cerramos el escaner
-			reader.close();
+	} catch (InputMismatchException e) {
+        System.out.println("Error: Por favor ingrese un número válido.");
+    } catch (Exception e) {
+        System.out.println("Ha ocurrido un error inesperado: " + e.getMessage());
+    } finally {
+    	
+	//cerramos el escaner
+		reader.close();
+		
+    	}
 	}
 }

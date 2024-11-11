@@ -1,6 +1,7 @@
 package parte2;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ejer2 {
@@ -17,6 +18,7 @@ public class Ejer2 {
 		int tablaUno [] = new int [10];
 		int tablaDos [] = new int [10];
 		
+		try {
 		System.out.println("Dime los valores que quieres que tengan las tablas :");
 		System.out.println("Tabla 1");
 		for (int i = 0; i < tablaUno.length ; i++) {
@@ -38,7 +40,16 @@ public class Ejer2 {
 		} else {
 			System.out.println("Las tablas son distintas");
 		}
+		
+		} catch (InputMismatchException e) {
+            System.out.println("Error: Por favor ingrese un número válido.");
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido un error inesperado: " + e.getMessage());
+        } finally {
+        	
 		//cerramos el escaner
 			reader.close();
+			
+        	}
 		}
 	}
