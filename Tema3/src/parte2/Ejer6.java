@@ -27,6 +27,7 @@ public class Ejer6 {
 			
 			tablaUno[i] = random.nextInt(1,50);
 			tablaDos[i] = random.nextInt(1,50);
+			
 		if (tablaUno[i] == tablaDos[i]) {
 			contador++;
 		}
