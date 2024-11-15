@@ -14,7 +14,7 @@ public class Ejer1 {
 		}
 		System.out.println("Tabla de enteros");
 		System.out.println(Arrays.toString(tabla));
-		System.out.println("La sura sera : " + sumaTabla(tabla));
+		System.out.println("La suma sera : " + sumaTabla(tabla));
 	}
 	static int sumaTabla(int tabla[]) {
 		int suma = 0;
