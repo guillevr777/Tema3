@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class Ejer5 {
 
 	public static void main(String[] args) {
-		//creo el escaner
-		Scanner reader = new Scanner(System.in);
 		
 		//creamos el random
 		Random random = new Random();
@@ -24,7 +22,7 @@ public class Ejer5 {
 		//creamos el array
 		int tabla[][] = new int[4][5];
 		
-		//creamos el for para generar los numeros de 100 a 1000
+		//creamos el for para generar los numeros de 100 a 1000 y ubicarlos en sus posiciones pertinentes 
 		for (int i = 0 ; i < tabla.length ; i++) {
 			for (int a = 0 ; a < tabla[i].length ; a++) {
 				tabla[i][a] = random.nextInt(100,1000);
@@ -44,11 +42,11 @@ public class Ejer5 {
 		//creamos el for para mostrar los resultados en la tabla
 		for (int i = 0 ; i < tabla[i].length ; i++) {
 			columnas = 0;
-		for (int a = 0 ; a < tabla.length ; a++) {
-			columnas += tabla[i][a];
+			for (int a = 0 ; a < tabla.length ; a++) {
+				columnas += tabla[i][a];
+				}
+				System.out.print("Cl:" + columnas + " ");	
 			}
-			System.out.print("Cl:" + columnas + " ");	
-		}
 		System.out.print("Total : " + resultado);
 	}
 }
