@@ -15,21 +15,22 @@ public class Ejer7 {
 		int contador = 0;
 		
 		try {
-		for (int a = 1 ; a < 11 ; a++) {
 			
 			//creo las tablas 
-			int tablaUno [] = new int [a];
-			contador++;
+			int tablaUno [] = new int [55];
+			int inicio = 0;
 			
 			//asignamos valores a la tabla
-			for (int i = 0; i < contador ; i++) {
+			for (int i = 1 ; i <= 10 ; i++) {
 			
-			tablaUno[i] = contador;
-		
+			Arrays.fill(tablaUno, inicio , inicio+i , i);
+				
+			inicio += i;	
+				
 			}
+			
 		//decimos por pantalla la tabla ordenada
 		System.out.println(Arrays.toString(tablaUno));
-		}
 								
 	} catch (InputMismatchException e) {
         System.out.println("Error: Por favor ingrese un número válido.");
