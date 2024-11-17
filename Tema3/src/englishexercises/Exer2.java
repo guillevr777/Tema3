@@ -30,7 +30,7 @@ public class Exer2 {
 		//we create the table with a size of 10 numbers
 		int numbers[] = new int[length];
 		
-		//we create a for to increise the number value and to insert it to the table 1 by 1 at lleast to the lengh that the user have said
+		//we create a for to increise the number value and to insert it to the table 1 by 1 at least to the length that the user have said
 		for (int i = 0 ; i < numbers.length ; i++) {
 			
 			numbers[i] = value;
