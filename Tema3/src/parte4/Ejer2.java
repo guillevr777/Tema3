@@ -9,20 +9,22 @@ public class Ejer2 {
 		
 			Random random = new Random();
 			
-			int tabla[] = new int[10];
+			int t[] = new int[10];
 			
-			for (int i = 0 ; i < tabla.length ; i++) {
-				tabla[i] = random.nextInt(1,11);
+			for (int i = 0 ; i < t.length ; i++) {
+				t[i] = random.nextInt(1,11);
 			}
-			System.out.println("Tabla de enteros");
-			System.out.println(Arrays.toString(tabla));
-			System.out.println("La suma sera : " + sumaTabla(tabla));
+			System.out.println("Numero Mayor : " + maximo(t));
+			
 		}
-		static int sumaTabla(int tabla[]) {
-			int suma = 0;
-			for (int i = 0 ; i < tabla.length ; i++) {
-				suma += tabla[i];
+		static int maximo(int t[]) {
+			int numeroMayor = 0;
+			for (int i = 0 ; i < t.length ; i++) {
+				
+				if (numeroMayor < t[i]) {
+					numeroMayor = t[i];
+				}
 			}
-			return suma;
+			return numeroMayor;
 		}
 	}
