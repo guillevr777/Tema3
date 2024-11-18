@@ -7,20 +7,20 @@ import java.util.Scanner;
 public class Ejer4 {
     public static void main(String[] args) {
         
-        // Creamos el scanner para leer la entrada del usuario
+        //creamos el scanner para leer la entrada del usuario
         Scanner reader = new Scanner(System.in);
         
-        // Pedimos el valor a buscar
+        //pedimos el valor a buscar
         System.out.println("Dime el valor a buscar del 0 al 10:");
         int clave = reader.nextInt();
         
-        // creamos la tabla
+        //creamos la tabla
         int[] tabla = {3, 7, 2, 8, 5, 9};
         
         int resultado = buscar(tabla, clave);
         
         if (resultado != -1) {
-            System.out.println("Clave " + clave + " encontrada en la posición: " + resultado);
+            System.out.println("Clave " + clave + " encontrada en la posicion: " + resultado);
         } else {
             System.out.println("Clave " + clave + " no encontrada.");
         }
