@@ -19,8 +19,10 @@ public class Ejer4 {
         
         int resultado = buscar(tabla, clave);
         
+        //si el resultado es diferente de -1 se muestra al usuario la posicion
         if (resultado != -1) {
             System.out.println("Clave " + clave + " encontrada en la posicion: " + resultado);
+            //si el resultado es -1 se indica que no se encontro el valor
         } else {
             System.out.println("Clave " + clave + " no encontrada.");
         }
@@ -34,6 +36,7 @@ public class Ejer4 {
         // Recorrer toda la tabla y si encontramos el numero lo dice
         for (int i = 0; i < t.length; i++) {
         	
+        	//si el numero de dicha posicion de la tabla es igual al valor clave devolvemos la posicion 
             if (t[i] == clave) {
                 return i;
             }
