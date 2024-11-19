@@ -11,32 +11,35 @@ public class Ejer5 {
 		int tabla[] = {1, 2 , 3, 4, 5, 2, 2, 1, 1, 5, 2, 4, 3, 1, 2};
 		
 		System.out.println("Dime un valor a buscar:");
-		int clave = reader.nextInt();
+		int valor = reader.nextInt();
 		
-		int resultado = buscar(tabla, clave);
+		int[] indices = buscarTodos(tabla, valor);
 		
-		
-		
-		//System.out.println(Arrays.toString());
-		//System.out.println();
-			
+		if (indices.length == 0) {
+			System.out.println("No se encuentra el valor");
+		} else {
+			System.out.println("DIcho valor se encuentra en :" + Arrays.toString(indices));
+		}
+		reader.close();
 	}
-	public static int buscar(int[] t, int clave) {
-        for (int i = 0; i < t.length; i++) {
-        	
-            if (t[i] == clave) {
-                
-            	
-            	
-            }
-        }
-        return -1;
-    }
-	static int[] bucarTodos(int t[], int valor) {
+	static int[] buscarTodos(int t[], int valor) {
 		int tamaño = numVeces(t,valor);
-		int[] tabla = new int [tamaño];
 		
-		return tabla;
+		if (tamaño == 0) {
+			return new int[0];
+		}
+		
+		int[] indices = new int [tamaño];
+		int indiceActual = 0;
+		
+		for (int i = 0 ; i < t.length ; i++) {
+			if (t[i] == valor) {
+				indices[indiceActual] = i;
+				indiceActual++;
+			}
+		}
+		
+		return indices;
 	}
 	static int numVeces(int t[], int valor) {
 		int contador = 0;
