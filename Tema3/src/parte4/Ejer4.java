@@ -33,15 +33,20 @@ public class Ejer4 {
 
     //buscamos el numero por la tabla
     public static int buscar(int[] t, int clave) {
+    	int indice = 0;
+    	boolean enc = false;
+    	
         // Recorrer toda la tabla y si encontramos el numero lo dice
-        for (int i = 0; i < t.length; i++) {
+        while (indice < t.length && !enc) {
         	
         	//si el numero de dicha posicion de la tabla es igual al valor clave devolvemos la posicion 
-            if (t[i] == clave) {
-                return i;
+            if (t[indice] == clave) {
+                enc = true;
+            } else {
+            	indice++;
             }
         }
         //si no se encuentra la clave, devuelve -1
-        return -1;
+        return indice;
     }
 }
