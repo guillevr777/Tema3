@@ -34,37 +34,53 @@ public class Ejer4 {
 		// creamos un booleano para devolver a la funcion principal
 		boolean magico = true;
 
-		// suma de filas y columnas
-		int columnas = 0;
+		// suma de filas
 		int filas = 0;
-		int columna = 0;
-
-		// creo un contador
-		int contador = 0;
+		
+		//creamos contadores
+		int contadorF = 0;
+		int contadorC = 0;
+		int sumaActualFila = 0;
+		int sumaActualColumna = 0;
 
 		//creo un for para coger el valor de la primera fila
 		for (int i = 0; i < t.length; i++) {
-			columna += t[i][0];
+			filas += t[0][i];
 		}
 		
-		// creo un for para verificar los valores de la tabla
-		while (contador == -1) {
-			for (int i = 0; i < t.length; i++) {
-				for (int j = 0; j < t.length; j++) {
+		 // Verificar si todas las filas suman lo mismo
+        while (contadorF < t.length && magico) {
+            sumaActualFila = 0;
+            contadorC = 0;
+            while (contadorC < t[contadorF].length) {
+                sumaActualFila += t[contadorF][contadorC];
+                contadorC++;
+            }
+            if (sumaActualFila != filas) {
+            	magico = false;
+            }
+            contadorF++;
+        }
 
-					filas += t[i][j];
+        // Verificar si todas las columnas suman lo mismo
+        if (magico) {
+        	contadorC = 0;
+            while (contadorC < t[0].length && magico) {
+                sumaActualColumna = 0;
+                contadorF = 0;
+                while (contadorF < t.length) {
+                    sumaActualColumna += t[contadorF][contadorC];
+                    contadorF++;
+                }
+                if (sumaActualColumna != filas) {
+                	magico = false;
+                }
+                contadorC++;
+            }
+        }
 
-					columnas += t[j][i];
 
-					if (columna != filas || columna != columnas) {
-						magico = false;
-						contador = -1;
-					}
-				}
-			}
-		}
-
-		// creamos el return de la tabla que creamos para devolverla a la funcion
-		return magico;
-	}
+        // Finalmente, devolvemos el resultado
+        return magico;
+    }
 }
