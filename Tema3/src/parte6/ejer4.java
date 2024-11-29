@@ -19,14 +19,18 @@ public class ejer4 {
 		posFila = reader.nextInt();
 		System.out.println("Y a que columna?");
 		posColumna = reader.nextInt();
+	
+		//Creamos un sistema para imrprimir la tabla
+		System.out.println(pieza);
 		
 		//cerramos el escaner
 		reader.close();
+		
 	}
 	//creamos la funcion pieza
-	static String pieza(String pieza) {
+	static String[][] pieza(String pieza) {
 		
-		int t[][] = new int[8][8];
+		String t[][] = new String[8][8];
 		
 		switch (pieza) {
 		case "T" -> torre(t);
@@ -37,12 +41,19 @@ public class ejer4 {
 		
 		return t;
 	}
-	static String[][] torre(int posFila ,int posColumna) {
+	static String[][] torre(String t ,int posFila ,int posColumna) {
 		String tab[][] = new String[8][8];
 		
 		for (int i = 0 ; i < tab.length ; i++) {
 			for (int j = 0 ; j < tab.length ; j++) {
-				
+				tab[i][j] = "*";
+				if (posFila == i && posColumna == j) {
+					tab[i][j] = "T";
+				} else if (posFila == i) {
+					tab[i][j] = "X";
+				} else if (posColumna == j) {
+					tab[i][j] = "X";
+				}
 			}
 		}
 			
