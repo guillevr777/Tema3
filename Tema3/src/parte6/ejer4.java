@@ -12,6 +12,8 @@ public class ejer4 {
 		String pieza;
 		int posFila;
 		int posColumna;
+		
+		String tabla[][] = new String[8][8];
 				
 		System.out.println("Que pieza quieres mover? Torre : T , A : Alfil , D : Dama y C : Caballo .");
 		pieza = reader.next().toUpperCase();
@@ -21,27 +23,38 @@ public class ejer4 {
 		posColumna = reader.nextInt();
 	
 		//Creamos un sistema para imrprimir la tabla
-		System.out.println(pieza);
+		tabla = pieza(pieza ,posFila ,posColumna);
+		
+		imprimirTablero(tabla);
 		
 		//cerramos el escaner
 		reader.close();
 		
 	}
+	 static void imprimirTablero(String[][] tablero) {
+	        for (int i = 0; i < tablero.length; i++) {
+	            for (int j = 0; j < tablero[i].length; j++) {
+	                System.out.print(tablero[i][j] + "    ");
+	        }
+	            System.out.println();
+	            System.out.println();
+	    }
+	}
 	//creamos la funcion pieza
-	static String[][] pieza(String pieza) {
+	static String[][] pieza(String pieza ,int posFila ,int posColumna) {
 		
 		String t[][] = new String[8][8];
 		
 		switch (pieza) {
-		case "T" -> torre(t);
-		case "A" -> alfil(t);
-		case "D" -> dama(t);
-		case "C" -> caballo(t);
+		case "T" -> t = torre(posFila ,posColumna);
+		case "A" -> t = alfil(posFila ,posColumna);
+		case "D" -> t = dama(posFila ,posColumna);
+		case "C" -> t = caballo(posFila ,posColumna);
 		}
 		
 		return t;
 	}
-	static String[][] torre(String t ,int posFila ,int posColumna) {
+	static String[][] torre(int posFila ,int posColumna) {
 		String tab[][] = new String[8][8];
 		
 		for (int i = 0 ; i < tab.length ; i++) {
@@ -65,6 +78,15 @@ public class ejer4 {
 		for (int i = 0 ; i < tab.length ; i++) {
 			for (int j = 0 ; j < tab.length ; j++) {
 				tab[i][j] = "*";
+				
+				if (posFila == i && posColumna == j) {
+					tab[i][j] = "A";
+				} else if ((i - posFila) == (j - posColumna)) {
+	                tab[i][j] = "X";
+	            } else if ((i - posFila) == (posColumna - j)) {
+	                tab[i][j] = "X";
+	            }
+
 			}
 		}
 		
@@ -76,6 +98,17 @@ public class ejer4 {
 		for (int i = 0 ; i < tab.length ; i++) {
 			for (int j = 0 ; j < tab.length ; j++) {
 				tab[i][j] = "*";
+				if (posFila == i && posColumna == j) {
+					tab[i][j] = "D";
+				} else if (posFila == i) {
+					tab[i][j] = "X";
+				} else if (posColumna == j) {
+					tab[i][j] = "X";
+				} else if (posFila-i == posColumna-j) {
+					tab[i][j] = "X";
+				} else if ((i - posFila) == (posColumna - j)) {
+	                tab[i][j] = "X";
+	            }
 			}
 		}
 		
@@ -87,6 +120,17 @@ public class ejer4 {
 		for (int i = 0 ; i < tab.length ; i++) {
 			for (int j = 0 ; j < tab.length ; j++) {
 				tab[i][j] = "*";
+				if (posFila == i && posColumna == j) {
+					tab[i][j] = "C";
+				} else if (posFila-2 == i && posColumna == j-1 || posFila-2 == i && posColumna == j+1) {
+					tab[i][j] = "X";
+				} else if (posFila+2 == i && posColumna == j-1 || posFila+2 == i && posColumna == j+1) {
+					tab[i][j] = "X";
+				} else if (posFila-1 == i && posColumna == j-2 || posFila-1 == i && posColumna == j+2) {
+					tab[i][j] = "X";
+				} else if (posFila+1 == i && posColumna == j-2 || posFila+1 == i && posColumna == j+2) {
+					tab[i][j] = "X";
+				}
 			}
 		}
 		
