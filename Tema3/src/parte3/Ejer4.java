@@ -11,6 +11,7 @@ public class Ejer4 {
 		//creamos contadores
 		int contadorUno = 0;
 		int contadorDos = 0;
+		int contadorTres = 0;
 		
 		//creamos la tabla
 		int tabla[][] = new int[10][10];
@@ -32,8 +33,10 @@ public class Ejer4 {
 		for (int i = 0 ; i < tabla.length ; i++) {
 			System.out.println("Tabla del " + (i+1));
 			for (int a = 0 ; a < 10 ; a++) {
-				System.out.println((i+1) + " * " + (i+1) + " = " + tabla[i][a]);
+				contadorTres++;
+				System.out.println((i+1) + " * " + (contadorTres) + " = " + tabla[i][a]);
 			}
+			contadorTres = 0;
 		}
 		
 		//mostramos por consola la tabla

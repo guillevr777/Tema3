@@ -10,10 +10,10 @@ public class Ejer6 {
 		 int tablaEnteros[] = {5, 6, 7, 3, 4, 2, 1, 2, 9, 8};
 		 
 		 	//creamos variable que definira el conjunto de numeros a sumar por iteracion
-	        int numElementos = 3;
+	        int NUMEROELEMENTOS = 3;
 	        
 	        //creamos tabla para almacenar las sumas
-	        int[] sumaEnteros = suma(tablaEnteros, numElementos);
+	        int[] sumaEnteros = suma(tablaEnteros, NUMEROELEMENTOS);
 	        
 	        //mostramos la tabla
 	        System.out.println(Arrays.toString(sumaEnteros));

@@ -20,7 +20,7 @@ public class Ejer5 {
 		int columnas = 0;
 		
 		//creamos el array
-		int tabla[][] = new int[4][5];
+		int tabla[][] = new int[5][5];
 		
 		//creamos el for para generar los numeros de 100 a 1000 y ubicarlos en sus posiciones pertinentes 
 		for (int i = 0 ; i < tabla.length ; i++) {
@@ -32,7 +32,7 @@ public class Ejer5 {
 		//creamos el for para mostrar la tabla
 		for (int i = 0 ; i < tabla.length ;i++) {
 			filas = 0;
-			for (int j = 0 ; j < tabla[i].length ; j++) {
+			for (int j = 0 ; j < tabla.length ; j++) {
 				System.out.print(tabla[i][j] + "\t");
 				filas += tabla[i][j];
 			}
@@ -40,10 +40,10 @@ public class Ejer5 {
 			System.out.println();
 		}
 		//creamos el for para mostrar los resultados en la tabla
-		for (int i = 0 ; i < tabla[i].length ; i++) {
+		for (int i = 0 ; i < tabla.length ; i++) {
 			columnas = 0;
 			for (int a = 0 ; a < tabla.length ; a++) {
-				columnas += tabla[i][a];
+				columnas += tabla[a][i];
 				}
 				System.out.print("Cl:" + columnas + " ");	
 			}
