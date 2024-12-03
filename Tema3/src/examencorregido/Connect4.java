@@ -1,3 +1,4 @@
+package examencorregido;
 import java.util.Scanner;
 
 public class Connect4 {
